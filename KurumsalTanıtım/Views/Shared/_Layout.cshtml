@@ -1,0 +1,80 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Temiz Evim</title>
+    <style>
+        .container {
+            display: flex;
+            align-items: center;
+            margin-left: 20px;
+        }
+
+        .navbar-nav {
+            display: flex;
+        }
+
+        .nav-link {
+            margin-left: 20px;
+        }
+
+            .nav-link:hover {
+                cursor: pointer;
+            }
+
+        .nav-img {
+            width: 50px;
+            height: auto;
+        }
+        a{
+            color:black;
+            text-decoration:none;
+        }
+        
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <a class="nav-img nav-link" href="@Url.Action("Index", "Home")">
+                <img class="nav-img" src="~/images/logo.png" alt="Logo">
+            </a>
+
+            <a class="navbar-brand nav-link"
+               asp-area=""
+               asp-controller="Home"
+               asp-action="Index">Temiz Evim</a>
+
+            <a class="nav-link"
+               asp-area=""
+               asp-controller="Home"
+               asp-action="Index">Ana Sayfa</a>
+
+            <a class="nav-link"
+               asp-area=""
+               asp-controller="Employee"
+               asp-action="Employee">Çalışanlar</a>
+
+            <a class="nav-link"
+               asp-area=""
+               asp-controller="Hizmetler"
+               asp-action="Hizmetler">Hizmetlerimiz</a>
+
+            <a class="nav-link"
+               asp-area=""
+               asp-controller="Iletisim"
+               asp-action="Index">Şikayet Formu</a>
+        </nav>
+    </header>
+    <div>
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

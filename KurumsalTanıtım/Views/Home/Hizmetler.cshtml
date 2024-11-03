@@ -1,0 +1,82 @@
+﻿@model List<KurumsalTanıtım.Models.Entities.Hizmetler>
+
+<h2 class="text-center">Hizmetler</h2>
+
+<div class="hizmetler-container">
+    @foreach (var hizmet in Model)
+    {
+        <div class="hizmet-item">
+            <h3>@hizmet.Baslik</h3>
+            <div class="aciklama">
+                <p>@hizmet.Aciklama</p>
+            </div>
+
+            @if (!string.IsNullOrEmpty(hizmet.ImagePath))
+            {
+                <div class="resim-kapsayici">
+                    <img src="@Url.Action("GetImage", "Hizmetler", new { id = hizmet.HizmetId })" alt="Resim">
+                </div>
+            }
+            else
+            {
+                <p>Resim bulunamadı.</p>
+            }
+        </div>
+    }
+</div>
+
+<style>
+    .text-center {
+        text-align: center;
+    }
+
+    .hizmetler-container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr); /* 3 sütun */
+        gap: 20px; /* Aralarındaki boşluk */
+    }
+
+    .hizmet-item {
+        border: 1px solid #ccc;
+        padding: 10px;
+        text-align: center;
+        cursor: pointer; /* Tıklanabilir göstermek için */
+    }
+
+    .resim-kapsayici {
+        width: 200px; /* Resmin genişliği */
+        height: 200px; /* Resmin yüksekliği */
+        /*overflow: hidden; /* Taşan içeriği gizle */
+        margin: 0 auto; /* Ortalamak için */
+    }
+
+        .resim-kapsayici img {
+            width: 100%; /* Resmi kapsayıcı genişliğine sığdır */
+            height: 100%; /* Resmi kapsayıcı yüksekliğine sığdır */
+            /*object-fit: cover; /* Resmi keserek sığdır */
+        }
+
+    .aciklama p {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease-out;
+    }
+
+        .aciklama p.show {
+            max-height: 200px; /* Açıklamanın tam yüksekliğini buraya yazın */
+            transition: max-height 0.3s ease-in;
+        }
+</style>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        var hizmetItems = document.querySelectorAll('.hizmet-item');
+
+        hizmetItems.forEach(function (item) {
+            item.addEventListener('click', function () {
+                var aciklama = this.querySelector('.aciklama p');
+                aciklama.classList.toggle('show');
+            });
+        });
+    });
+</script>

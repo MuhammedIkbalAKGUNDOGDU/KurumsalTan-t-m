@@ -1,0 +1,287 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+
+<div class="navbar">
+    <div class="cleanhouse">
+        <div>
+            <div class="cleanhouse-1">100.000+ Mutlu Müşteri</div>
+            <div class="cleanhouse-2">
+                <h3>Evinin İhtiyaçları İçin</h3>
+                <h3>Profosyonel Hizmet Al</h3>
+            </div>
+            <div class="cleanhouse-3">
+                <p class="cleanhouse-3-p">
+                    Ev temizliğinden nakliye hizmetine 15.000'in
+                </p>
+                <p class="cleanhouse-3-p">
+                    üzerinde deneyimli profesyonel ile güvenilir hizmet
+                </p>
+            </div>
+            <a href="@Url.Action("HizmetAl", "Home")" class="button1">Randevu Al</a>
+        </div>
+        <div>
+            <img class="logo" src="images/logo.png" alt="Logo" />
+        </div>
+    </div>
+    <div class="evinitemizleyelim">
+        <p class="label-1">Evini Temizleyelim</p>
+        <div class="evinitemizleyelim-inner">
+            <div class="img-container">
+                <img src="images/homecleaning.jpg" alt="" />
+                <p class="img-p">Ev Temizliği</p>
+            </div>
+            <div class="img-container">
+                <img src="images/sofacleaning.jpg" alt="" />
+                <p class="img-p">Koltuk Temizliği</p>
+            </div>
+            <div class="img-container">
+                <img src="images/simplecleaning.jpg" alt="" />
+                <p class="img-p">Yarım Gün Ev Temizliği Temizliği</p>
+            </div>
+            <div class="img-container">
+                <img src="images/emptycleaning.jpg" alt="" />
+                <p class="img-p">Boş Ev Temizliği</p>
+            </div>
+        </div>
+    </div>
+    <div class="evinitemizleyelim">
+        <p class="label-1">Temizlikten Daha Fazlası</p>
+
+        <div class="evinitemizleyelim-inner">
+            <div class="img-container">
+                <img src="images/furnitureassembly.jpg" alt="" />
+                <p class="img-p">Mobilya Montajı</p>
+            </div>
+            <div class="img-container">
+                <img src="images/carpetcleaning.jpg" alt="" />
+                <p class="img-p">Halı Yıkama</p>
+            </div>
+            <div class="img-container">
+                <img src="images/nanocleaning.jpg" alt="" />
+                <p class="img-p">Ev Dezenfeksiyonu</p>
+            </div>
+            <div class="img-container">
+                <img src="images/moving.jpg" alt="" />
+                <p class="img-p">Nakliyat</p>
+            </div>
+            <div class="img-container">
+                <img src="images/officecleaning.jpg" alt="" />
+                <p class="img-p">Ofis Temizliği</p>
+            </div>
+        </div>
+    </div>
+    <div class="cleanhouse cleanhouse3">
+        <div class="text-center-cleanhouse">Neden Temizevim?</div>
+        <div class="cleanhouse4">
+            <div class="madde">
+                <h4>Profesyonel Hizmet</h4>
+                <p>Tüm profesyonellerle yüz yüze görüşüp düzenli eğitimler veriyoruz. Ayrıca Mutlubiev sistemine kayıtlı profesyoneller evinde bulunduğu sürece tüm yasal gereklilikleri senin adına sağlıyoruz.</p>
+            </div>
+            <div class="madde">
+                <h4>Malzeme Derdi Yok</h4>
+                <p>Temizlik malzemelerini dert etmene gerek yok! Eğer istersen, profesyonellerimiz temizlik malzemelerini yanlarında getiriyor.</p>
+            </div>
+            <div class="madde">
+                <h4>Güvenilir Profesyoneller</h4>
+                <p>Profesyonellerin adli kayıtlarını kontrol ediyoruz.</p>
+            </div>
+            <div class="madde">
+                <h4>%100 Mutluluk Politikası</h4>
+                <p>Hizmetten memnun kalmazsan her zaman yanındayız! Mutlubiev %100 Mutluluk Hattı'na dilediğin zaman ulaşıp, telafi hizmeti hakkında bilgi alabilirsin.</p>
+            </div>
+            <div class="madde">
+                <h4>Sigorta Güvencesi</h4>
+                <p>Türkiye’de bir ilki gerçekleştirerek hizmet süresince evinde oluşabilecek hasarlara karşı evini ₺250.000'ye kadar güvence altına alıyoruz.</p>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="footer">
+    <address>Mimar Sinan, Selmani Pak Cd. No:182, 34672 Üsküdar/İstanbul</address>
+    <div class="footer-madde">temizevim@temizevim.com.tr</div>
+    &copy; 2024 Temiz Evim - Tüm hakları saklıdır.
+</div>
+
+<a href="@Url.Action("HizmetAl", "Home")" class="fixed-button">Randevu Al</a>
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+    }
+
+    .navbar {
+        display: flex;
+        flex-direction: column;
+        padding : 5%;
+    }
+
+    .logo {
+        width: 200px;
+        height: auto;
+    }
+
+    .cleanhouse {
+        margin-top: 50px;
+        display: flex;
+        border-color: #0098d47e;
+        border-width: 2px;
+        border-radius: 10px;
+        border-style: solid;
+        max-width: 1000px;
+        padding: 50px;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 50px;
+    }
+
+    .button1 {
+        margin-top: 20px;
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: #0098d47e;
+        color: black;
+        text-decoration: none;
+        border-radius: 10px;
+        border: none;
+        text-align: center;
+    }
+
+        .button1:hover {
+            background-color: #007bb3;
+            cursor: pointer;
+        }
+    .cleanhouse-1 {
+        background-color: #0098d47e;
+        width: max-content;
+        font-size: medium;
+        border-radius: 8px;
+        padding: 5px;
+        margin-top: 30px;
+    }
+
+    .cleanhouse-2 {
+        font-size: medium;
+        font-size: x-large;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+
+    h3 {
+        margin: 0%;
+    }
+
+    .cleanhouse-3 {
+        font-size: smaller;
+    }
+
+    .cleanhouse-3-p {
+        margin: 0%;
+    }
+
+    .evinitemizleyelim {
+        margin-top: 30px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .img-container {
+        margin-left: 10px;
+        position: relative;
+        display: flex;
+    }
+
+        .img-container img {
+            width: 250px;
+            height: 130px;
+        }
+
+    .img-p {
+        position: absolute;
+        color: #0098d4;
+        font-weight: bolder;
+        left: 50%;
+        font-size: smaller;
+        text-wrap: nowrap;
+        top: 80%;
+        transform: translate(-50%, -80%);
+    }
+
+    .evinitemizleyelim-inner {
+        display: flex;
+    }
+
+    .label-1 {
+        margin-left: 10px;
+        font-size: 2cap;
+        font-weight: bolder;
+    }
+
+    .text-center-cleanhouse {
+        font-size: x-large;
+        font-weight: bolder;
+        width: 100%;
+        text-align: center;
+    }
+
+    .cleanhouse3 {
+        display: flex;
+        flex-direction: column;
+        background-image: url('images/backgorund.jpg'); /* Arka plan resminin URL'si */
+        background-size: cover; /* Arka plan resminin boyutlandırılması */
+        background-position: center; /* Arka plan resminin konumu */
+    }
+
+    .cleanhouse4 {
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr 1fr; /* İki sütunlu grid */
+        gap: 20px; /* Grid öğeleri arasındaki boşluk */
+        padding: 20px;
+    }
+
+    .madde {
+        z-index: 1;
+        padding: 15px;
+        border-radius: 8px;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .footer {
+        background-color: #0098d4;
+        color: #fff;
+        padding: 20px;
+        text-align: center;
+        width: 100%;
+    }
+
+    .footer-madde {
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+
+    .fixed-button {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        margin-top: 20px;
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: #0098d47e;
+        color: black;
+        text-decoration: none;
+        border-radius: 10px;
+        border: none;
+        text-align: center;
+        width: 200px;
+    }
+
+        .fixed-button:hover {
+            background-color: #0077b6;
+        }
+</style>
+
+

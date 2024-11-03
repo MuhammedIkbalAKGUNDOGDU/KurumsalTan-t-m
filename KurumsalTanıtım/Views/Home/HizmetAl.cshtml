@@ -1,0 +1,102 @@
+﻿@model KurumsalTanıtım.Models.Entities.HizmetAl
+
+@{
+    ViewData["Title"] = "Talep Al";
+}
+
+<div class="container2">
+    <style>
+        input[type=text], select {
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        input[type=submit] {
+            width: 100%;
+            background-color: #4CAF50;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+            input[type=submit]:hover {
+                background-color: #45a049;
+            }
+
+        div {
+            border-radius: 5px;
+            background-color: #f2f2f2;
+            padding: 20px;
+        }
+    </style>
+
+    <form method="post">
+        <div class="form-group">
+            <label asp-for="AdSoyad">Ad ve Soyad</label>
+            <input asp-for="AdSoyad" class="form-control" />
+            <span asp-validation-for="AdSoyad" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="TelefonNo">Telefon Numarası</label>
+            <input asp-for="TelefonNo" class="form-control" />
+            <span asp-validation-for="TelefonNo" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="IlveIlce">İl</label>
+            <select asp-for="IlveIlce" class="form-control">
+                <option value="istanbulB">İstanbul/Bağcılar</option>
+                <option value="istanbulG">İstanbul/Güngören</option>
+                <option value="istanbulE">İstanbul/Esenler</option>
+                <option value="ankaraM">Ankara/Mamak</option>
+                <option value="ankaraS">Ankara/Sincan</option>
+                <option value="ankaraY">Ankara/Yenimahalle</option>
+                <option value="hatayD">Hatay/Dörtyol</option>
+                <option value="hatayI">Hatay/İskenderun</option>
+                <option value="hatayA">Hatay/Arsuz</option>
+            </select>
+            <span asp-validation-for="IlveIlce" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="OdaSayisi">Oda Sayısı</label>
+            <select asp-for="OdaSayisi" class="form-control">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+            </select>
+            <span asp-validation-for="OdaSayisi" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="TemizlikSikligi">Temizlik Sıklığı (Haftada)</label>
+            <select asp-for="TemizlikSikligi" class="form-control">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+            </select>
+            <span asp-validation-for="TemizlikSikligi" class="text-danger"></span>
+        </div>
+        <input type="submit" value="Satın Al">
+    </form>
+    @if (ViewBag.SuccessMessage != null)
+    {
+        <div class="alert alert-success" role="alert">
+            @ViewBag.SuccessMessage
+        </div>
+    }
+</div>
+

@@ -1,0 +1,66 @@
+﻿@model IEnumerable<KurumsalTanıtım.Models.Entities.Employee>
+@{
+    ViewData["Title"] = "Employees";
+}
+<h2>Employee List</h2>
+
+<div class="table-container">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Surname</th>
+                <th>Department</th>
+                <th>Salary</th>
+                <th>SalaryDay</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var employee in Model)
+            {
+                <tr>
+                    <td>@employee.Name</td>
+                    <td>@employee.Surname</td>
+                    <td>@employee.Department</td>
+                    <td>@employee.Salary</td>
+                    <td>@employee.SalaryDay</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+<style>
+    body, html {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    .table-container {
+        width: 100%;
+        overflow-x: auto; /* Gerektiğinde yatay kaydırma çubuğu eklemek için */
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    th {
+        background-color: #04aa6d;
+        color: white;
+    }
+
+    th,
+    td {
+        padding: 15px;
+        text-align: left;
+        border-bottom: 1px solid #ddd;
+    }
+
+    tr:hover {
+        background-color: coral;
+    }
+</style>

@@ -1,0 +1,73 @@
+﻿@model KurumsalTanıtım.Models.Entities.Iletisim
+
+@if (TempData["SuccessMessage"] != null)
+{
+    <div class="alert alert-success">@TempData["SuccessMessage"]</div>
+}
+<!DOCTYPE html>
+<html>
+<style>
+    input[type=text], select, textarea {
+        width: 100%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+    }
+
+    input[type=submit] {
+        width: 100%;
+        background-color: #4CAF50;
+        color: white;
+        padding: 14px 20px;
+        margin: 8px 0;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+        input[type=submit]:hover {
+            background-color: #45a049;
+        }
+
+    div {
+        border-radius: 5px;
+        background-color: #f2f2f2;
+        padding: 20px;
+    }
+
+    textarea {
+        height: 150px; /* Başlangıçta daha büyük */
+    }
+</style>
+<body>
+
+    <div>
+        <form asp-controller="Iletisim" asp-action="Index" method="post">
+
+            <label for="fname">Ad ve Soyad</label>
+            <input asp-for="Name" type="text" id="fname" name="Name" placeholder="Adınız ve Soyadınız">
+            <span asp-validation-for="Name"></span>
+
+
+
+            <label for="lname">Email</label>
+            <input asp-for="Email" type="text" id="email" name="Email" placeholder="Email">
+            <span asp-validation-for="Email"></span>
+
+            <label for="issue">Başlık</label>
+            <input asp-for="Issue" type="text" id="issue" name="Issue" placeholder="Başlık">
+            <span asp-validation-for="Issue"></span>
+
+            <label for="complaint">Konu</label>
+            <textarea asp-for="Complaint" id="complaint" name="Complaint" placeholder="Konu"></textarea>
+            <span asp-validation-for="Complaint"></span>
+
+            <input type="submit" value="Kaydet">
+        </form>
+    </div>
+
+</body>
+</html>
